@@ -1,0 +1,203 @@
+{
+  "name":"vMans VMWare SIEM Monitoring",
+  "namespace":"ch.vman.vrli",
+  "contentPackId":"ch.vman.vrli",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"SIEM-ESXi-AccountAction",
+    "preContext":"was ",
+    "postContext":" on",
+    "regexValue":"\\w+",
+    "internalName":"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewucy3dn52w45cbmn2gs33o",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"hostd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"SIEM-ESXi-AccountEvent",
+    "preContext":"] \\[",
+    "postContext":"\\] \\[info]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewucy3dn52w45cfozsw45a0",
+    "constraints":"{\"searchTerms\":\"vim.event*\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vpxd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"SIEM-ESXi-AccountEventHost",
+    "preContext":"on host ",
+    "postContext":"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewucy3dn52w45cfozsw45cin5zxi000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vpxd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}],\"searchTerms\":\"vim.event.*\"}",
+    "info":null
+  }, {
+    "displayName":"SIEM-ESXi-AccountName",
+    "preContext":"Account ",
+    "postContext":" was",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewucy3dn52w45comfwwk000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"hostd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"SIEM-ESXi-PasswordChangedUser",
+    "preContext":"account ",
+    "postContext":" on",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewvaylton3w64teinugc3thmvsfk43foi000000",
+    "constraints":"{\"searchTerms\":\"Password was changed for account\"}",
+    "info":null
+  }, {
+    "displayName":"SIEM-VC-LocalSSOAction",
+    "preContext":"UTC : ",
+    "postContext":" \\w+",
+    "regexValue":"\\w+",
+    "internalName":"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6qldoruw63q0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}],\"searchTerms\":\"Principal Management event\"}",
+    "info":null
+  }, {
+    "displayName":"SIEM-VC-LocalSSODeleteAction",
+    "preContext":"Deleting principal '",
+    "postContext":"'",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6rdfnrsxizkbmn2gs33o",
+    "constraints":"{\"searchTerms\":\"Principal Management event\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"SIEM-VC-LocalSSOGroup",
+    "preContext":"group '",
+    "postContext":"'",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6r3sn52xa000",
+    "constraints":"{\"searchTerms\":\"Principal Management event\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"SIEM-VC-LocalSSOUser",
+    "preContext":"local person user '",
+    "postContext":"' ",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvza0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"SIEM-VC-LocalSSOUserDisable",
+    "preContext":"Name: ",
+    "postContext":"\\, Domain",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvzei2ltmfrgyzi0",
+    "constraints":"{\"searchTerms\":\"Principal Management event\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"SIEM-VC-LocalSSOUserModifiedBy",
+    "preContext":"Principal Management event by ",
+    "postContext":" at",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvze233enftgszleij4q0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"SIEM-ESXi-LocalAccountAction",
+    "info":"An account creation,modification or deletion has been detected on the host below.",
+    "recommendation":"SIEM-ESXi-LocalAccountAction-Recommendation",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"on host\",\"startTimeMillis\":1589191649443,\"endTimeMillis\":1589364449442,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"vpxd, vcenter-server\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"updated,created,removed\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-ESXi-AccountAction\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewucy3dn52w45cbmn2gs33o\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-ESXi-AccountName\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewucy3dn52w45comfwwk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"SIEM-ESXi-AccountAction\",\"preContext\":\"was \",\"postContext\":\" on\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewucy3dn52w45cbmn2gs33o\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"hostd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"SIEM-ESXi-AccountName\",\"preContext\":\"Account \",\"postContext\":\" was\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewucy3dn52w45comfwwk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"hostd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"SIEM-VCPSC-LocalSSOUserManagement",
+    "info":"A user has been created or modified in the local SSO domain",
+    "recommendation":"SIEM-VCPSC-LocalSSOUserManagement-Recommendation",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1589273241241,\"endTimeMillis\":1589359641240,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server\"},{\"internalName\":\"vc_event_type\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.sso.principalmanagement\"},{\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6qldoruw63q0\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"Deleting,Disable\"},{\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6r3sn52xa000\",\"operator\":\"NOT_EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"appname\",\"internalName\":\"appname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-VC-LocalSSOUserModifiedBy\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvze233enftgszleij4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-VC-LocalSSOAction\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6qldoruw63q0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-VC-LocalSSOUser\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvza0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"SIEM-VC-LocalSSOAction\",\"preContext\":\"UTC : \",\"postContext\":\" \\\\w+\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6qldoruw63q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"Principal Management event\\\"}\"},{\"displayName\":\"SIEM-VC-LocalSSOGroup\",\"preContext\":\"group '\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6r3sn52xa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Principal Management event\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"SIEM-VC-LocalSSOUser\",\"preContext\":\"local person user '\",\"postContext\":\"' \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvza0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"SIEM-VC-LocalSSOUserModifiedBy\",\"preContext\":\"Principal Management event by \",\"postContext\":\" at\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvze233enftgszleij4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"SIEM-VCPSC-LocalSSOGroupManagement",
+    "info":"A local SSO group has been Created or modified",
+    "recommendation":"SIEM-VCPSC-LocalSSOGroupManagement-Recommendation",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1589273448279,\"endTimeMillis\":1589359848278,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server\"},{\"internalName\":\"vc_event_type\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.sso.principalmanagement\"},{\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6qldoruw63q0\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"Deleting,Disable\"},{\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvza0000\",\"operator\":\"NOT_EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"appname\",\"internalName\":\"appname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-VC-LocalSSOUserModifiedBy\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvze233enftgszleij4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-VC-LocalSSOAction\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6qldoruw63q0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-VC-LocalSSOGroup\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6r3sn52xa000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"SIEM-VC-LocalSSOAction\",\"preContext\":\"UTC : \",\"postContext\":\" \\\\w+\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6qldoruw63q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"Principal Management event\\\"}\"},{\"displayName\":\"SIEM-VC-LocalSSOGroup\",\"preContext\":\"group '\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6r3sn52xa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Principal Management event\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"SIEM-VC-LocalSSOUser\",\"preContext\":\"local person user '\",\"postContext\":\"' \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvza0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"SIEM-VC-LocalSSOUserModifiedBy\",\"preContext\":\"Principal Management event by \",\"postContext\":\" at\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvze233enftgszleij4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"SIEM-VAMI-LocalOS-UserManagement",
+    "info":"A local user has been created on the local OS of the device.",
+    "recommendation":"SIEM-LocalOS-UserManagement-Recommendation",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"siem-test-localos\",\"startTimeMillis\":1589357699329,\"endTimeMillis\":1589361299328,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"useradd, chpasswd, usermod, userdel\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"SIEM-VCPSC-LocalSSOUserDisabled",
+    "info":"The user account below has been disabled in the local SSO.",
+    "recommendation":"SIEM-VCPSC-LocalSSOUserDisabled-Recommendation",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Disable\",\"startTimeMillis\":1589272795307,\"endTimeMillis\":1589359195306,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server\"},{\"internalName\":\"vc_event_type\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.sso.principalmanagement\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"appname\",\"internalName\":\"appname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-VC-LocalSSOUserModifiedBy\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvze233enftgszleij4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-VC-LocalSSOAction\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6qldoruw63q0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-VC-LocalSSOUserDisable\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvzei2ltmfrgyzi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"SIEM-VC-LocalSSOAction\",\"preContext\":\"UTC : \",\"postContext\":\" \\\\w+\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6qldoruw63q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"Principal Management event\\\"}\"},{\"displayName\":\"SIEM-VC-LocalSSOUserDisable\",\"preContext\":\"Name: \",\"postContext\":\"\\\\, Domain\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvzei2ltmfrgyzi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Principal Management event\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"SIEM-VC-LocalSSOUserModifiedBy\",\"preContext\":\"Principal Management event by \",\"postContext\":\" at\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvze233enftgszleij4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"SIEM-VCPSC-ESXiPasswordChanged",
+    "info":"vCenter has detected a password change on the host(s) below.",
+    "recommendation":"SIEM-VCPSC-ESXiPasswordChanged-Recommendation",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"Password was changed for account\",\"startTimeMillis\":1589360586454,\"endTimeMillis\":1589364186453,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-ESXi-PasswordChangedUser\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewvaylton3w64teinugc3thmvsfk43foi000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"SIEM-ESXi-PasswordChangedUser\",\"preContext\":\"account \",\"postContext\":\" on\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewvaylton3w64teinugc3thmvsfk43foi000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Password was changed for account\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"SIEM-VCPSC-ESXiLocalAccountAction",
+    "info":"vCenter has detected a creation, modification or deletion of a local account on the esxi host below",
+    "recommendation":"SIEM-VCPSC-ESXiLocalAccountAction-Recommendation",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"vim.event.Account*\",\"startTimeMillis\":1589342947761,\"endTimeMillis\":1589364547760,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vpxd\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-ESXi-AccountEvent\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewucy3dn52w45cfozsw45a0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-ESXi-AccountEventHost\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewucy3dn52w45cfozsw45cin5zxi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"SIEM-ESXi-AccountEvent\",\"preContext\":\"] \\\\[\",\"postContext\":\"\\\\] \\\\[info]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewucy3dn52w45cfozsw45a0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"vim.event*\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vpxd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"SIEM-ESXi-AccountEventHost\",\"preContext\":\"on host \",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewucy3dn52w45cfozsw45cin5zxi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vpxd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"vim.event.*\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"SIEM-ESXi-LocalUserPasswordChanged",
+    "info":"The user below has had it's password changed on the ESXi host",
+    "recommendation":"SIEM-ESXi-LocalUserPasswordChanged-Recommendation",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"Password was changed for account\",\"startTimeMillis\":1589360331623,\"endTimeMillis\":1589363931622,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"vpxd, vcenter-server\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-ESXi-PasswordChangedUser\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewvaylton3w64teinugc3thmvsfk43foi000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"SIEM-ESXi-PasswordChangedUser\",\"preContext\":\"account \",\"postContext\":\" on\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwuku2ynewvaylton3w64teinugc3thmvsfk43foi000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Password was changed for account\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"SIEM-VCPSC-LocalSSODeletion",
+    "info":"A user or group has been deleted from the local SSO domain.",
+    "recommendation":"SIEM-VCPSC-LocalSSODeletion-Recommendation",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"Deleting\",\"startTimeMillis\":1589355099769,\"endTimeMillis\":1589358699768,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server\"},{\"internalName\":\"vc_event_type\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.sso.principalmanagement\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"appname\",\"internalName\":\"appname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-VC-LocalSSOUserModifiedBy\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvze233enftgszleij4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-VC-LocalSSOAction\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6qldoruw63q0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"SIEM-VC-LocalSSODeleteAction\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6rdfnrsxizkbmn2gs33o\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"SIEM-VC-LocalSSOAction\",\"preContext\":\"UTC : \",\"postContext\":\" \\\\w+\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6qldoruw63q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"Principal Management event\\\"}\"},{\"displayName\":\"SIEM-VC-LocalSSODeleteAction\",\"preContext\":\"Deleting principal '\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6rdfnrsxizkbmn2gs33o\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Principal Management event\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"SIEM-VC-LocalSSOUserModifiedBy\",\"preContext\":\"Principal Management event by \",\"postContext\":\" at\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnuc45tnmfxc45tsnruvgskfjuwvmqznjrxwgylmknju6vltmvze233enftgszleij4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  } ],
+  "dashboardSections":[ ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"vman",
+  "url":"vman.ch",
+  "contentVersion":"1.0"
+}
